@@ -1,0 +1,79 @@
+stages:
+  - config
+  - build
+  - deploy
+
+config qa:
+  stage: config
+  image:
+    name: amazon/aws-cli
+    entrypoint: [""]
+  script:
+    - aws s3 cp s3://kince-private/projects/sabeeo/spa/.env.qa ./.env.qa
+    - aws s3 cp s3://kince-private/projects/sabeeo/spa/firebase-messaging-sw.js ./public/firebase-messaging-sw.js
+  artifacts:
+    paths:
+      - .env.qa
+      - ./public/firebase-messaging-sw.js
+    expire_in: 1 hour
+  only:
+    - test
+
+build qa:
+  stage: build
+  image: node:18.10.0-alpine3.16
+  script:
+    - npm install
+    - CI= npm run build:qa
+  artifacts:
+    paths:
+      - dist
+  only:
+    - test
+
+deploy qa:
+  stage: deploy
+  image:
+    name: amazon/aws-cli
+    entrypoint: [""]
+  script:
+    - aws s3 sync dist/ s3://sabeeo-test-app
+  only:
+    - test
+
+config prod:
+  stage: config
+  image:
+    name: amazon/aws-cli
+    entrypoint: [""]
+  script:
+    - aws s3 cp s3://kince-private/projects/sabeeo/spa/.env.production ./.env.production
+    - aws s3 cp s3://kince-private/projects/sabeeo/spa/firebase-messaging-sw.js ./public/firebase-messaging-sw.js
+  artifacts:
+    paths:
+      - .env.production
+    expire_in: 1 hour
+  only:
+    - test
+
+build prod:
+  stage: build
+  image: node:18.10.0-alpine3.16
+  script:
+    - npm install
+    - CI= npm run build:production
+  artifacts:
+    paths:
+      - dist
+  only:
+    - master
+
+deploy prod:
+  stage: deploy
+  image:
+    name: amazon/aws-cli
+    entrypoint: [""]
+  script:
+    - aws s3 sync dist/ s3://sabeeo-app
+  only:
+    - master
