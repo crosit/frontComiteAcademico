@@ -2,9 +2,8 @@
   display: flex;
   justify-content: center ;
   align-items: center;
-  height: 95vh;
+  height: 100%;
   width: 100%;
-
 }
 
 .main {
@@ -14,10 +13,7 @@
   background-color: #240046;
   max-height: 700px;
   overflow: hidden;
-  border-radius: 12px;
-  box-shadow: 7px 7px 10px 3px #24004628;
-  width: 400px;
-
+  width: 100%;
 }
 
 .form {
@@ -40,7 +36,7 @@
 }
 
 .login label {
-  margin: 25% 0 5%;
+  margin: 50px 0 0%;
 }
 
 label {
@@ -67,7 +63,7 @@ label {
 .register {
   background: #eee;
   border-radius: 60% / 10%;
-  transform: translateY(25%);
+  transform: translateY(20%);
   transition: .8s ease-in-out;
   min-height: 700px;
 }
@@ -78,7 +74,7 @@ label {
 }
 
 #chk:checked ~ .register {
-  transform: translateY(-60%);
+  transform: translateY(-85%);
 }
 #chk:checked ~ .login {
   margin-bottom: 120px;

@@ -6,6 +6,7 @@ import Login from "./Login/Login";
 import ForgotPassword from "./ForgotPassword/ForgotPassword";
 import RecoverPassword from "./RecoverPassword/RecoverPassword";
 import { Error403 } from "./Errors/Error403";
+import FormDocuments from "./Home/components/FormDocuments";
 
 export const router = createBrowserRouter([
   {
@@ -22,6 +23,15 @@ export const router = createBrowserRouter([
     element: (
       <AuthProvider>
         <Login />
+      </AuthProvider>
+    ),
+    errorElement: <Error />,
+  },
+  {
+    path: "/create",
+    element: (
+      <AuthProvider>
+        <FormDocuments />
       </AuthProvider>
     ),
     errorElement: <Error />,

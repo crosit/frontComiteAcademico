@@ -10,68 +10,126 @@ import Loader from "../../components/Loader";
 import animationData from "../../assets/lottie/lottie-loading2.json";
 import { useRef, useEffect } from "react";
 import Lottie from "lottie-web";
+import { Button, Card, Space } from "antd";
+import { CheckOutlined, CloseOutlined } from "@ant-design/icons";
 
 function App() {
-  const { documents, isLoading, handleRefetch } = useUserViewDocuments();
+  // const { documents, isLoading, handleRefetch } = useUserViewDocuments();
 
-  const defaultOptions = {
-    loop: true,
-    autoplay: true,
-    animationData: animationData,
-    rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice",
+  // const defaultOptions = {
+  //   loop: true,
+  //   autoplay: true,
+  //   animationData: animationData,
+  //   rendererSettings: {
+  //     preserveAspectRatio: "xMidYMid slice",
+  //   },
+  // };
+
+  // const container = useRef<any>(null);
+
+  // useEffect(() => {
+  //   Lottie.loadAnimation({
+  //     container: container.current,
+  //     renderer: "svg",
+  //     loop: true,
+  //     autoplay: true,
+  //     animationData: animationData,
+  //   });
+  // }, [documents]);
+
+  const cardData = [
+    {
+      title: "Titulo 1",
+      description:
+        "Esta es la descripción de la tarjeta 3, descripción larga, se puede ver que se ajusta al tamaño de la tarjeta, y se ve bien.",
+      creationDate: "2023-05-19",
     },
-  };
+    {
+      title: "Titulo 2",
+      description:
+        "Esta es la descripción de la tarjeta 3, descripción larga, se puede ver que se ajusta al tamaño de la tarjeta, y se ve bien.",
+      creationDate: "2023-05-20",
+    },
+    {
+      title: "Titulo 3",
+      description:
+        "Esta es la descripción de la tarjeta 3, descripción larga, se puede ver que se ajusta al tamaño de la tarjeta, y se ve bien.",
+      creationDate: "2023-05-21",
+    },
+  ];
 
-  const container = useRef<any>(null);
+  const navigate = useNavigate();
 
-  useEffect(() => {
-    Lottie.loadAnimation({
-      container: container.current,
-      renderer: "svg",
-      loop: true,
-      autoplay: true,
-      animationData: animationData,
-    });
-  }, [documents]);
-
-  const { t } = useTranslation();
   return (
-    <div style={{ color: "black" }}>
-      <Title className="titleHome">
-        {t("documents.policiesandprocedures")}
-      </Title>
+    <div
+      style={{
+        height: "90vh",
+      }}
+    >
+      <div style={{ marginTop: '50px', marginRight: '90px', display: 'flex', justifyContent: 'end' }}>
+        <Button
+          onClick={() => navigate("/create")}
+        >
+          Crear nueva peticion
+        </Button>
+      </div>
       <div
-        style={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          height: "100%",
+        }}
       >
-        {isLoading ? (
-          <Loader />
-        ) : documents.length > 0 ? (
-          documents.map((document: any) => (
-            <CardDocument
-              key={document.id}
-              document={document}
-              handleRefetch={handleRefetch}
-            />
-          ))
-        ) : (
-          <div
+        {cardData.map((card, index) => (
+          <Card
+            key={index}
+            headStyle={{ background: "#3B76EC", color: "white" }}
+            title={card.title}
             style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              flexDirection: "column",
-              height: "100%",
-              width: "100%",
-              marginTop: 100,
+              background: "#3B76EC",
+              color: "white",
+              margin: "16px",
+              maxWidth: "350px",
+              borderRadius: "8px",
+              borderColor: "#3B76EC",
+              borderWidth: "2px",
             }}
+            actions={[
+              <Button
+                icon={<CheckOutlined />}
+                type="primary"
+                style={{ background: "#45C27A" }}
+              />,
+              <Button icon={<CloseOutlined />} type="primary" danger />,
+              <Button
+                icon={<CheckOutlined />}
+                type="primary"
+                style={{ background: "#45C27A" }}
+              />,
+              <Button icon={<CloseOutlined />} type="primary" danger />,
+              <Button
+                icon={<CheckOutlined />}
+                type="primary"
+                style={{ background: "#45C27A" }}
+              />,
+            ]}
           >
-            <div style={{ fontWeight: "bold", background: "#ffc858", padding: 10, borderRadius: 20 }}>
-              {t("documents.noPendingDocuments")} 🐝 
+            <div
+              style={{
+                height: "250px",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "space-between",
+              }}
+            >
+              <p style={{ fontSize: 16 }}>{card.description}</p>
+              <p style={{ fontSize: 16, fontWeight: "bold" }}>
+                Fecha de creación: {card.creationDate}
+              </p>
             </div>
-            <div style={{ height: 300, width: 300 }} ref={container}></div>
-          </div>
-        )}
+          </Card>
+        ))}
       </div>
     </div>
   );
