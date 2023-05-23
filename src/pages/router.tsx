@@ -12,9 +12,9 @@ export const router = createBrowserRouter([
   {
     path: "/",
     element: (
-      <AuthProvider>
+      // <AuthProvider>
         <App />
-      </AuthProvider>
+      // </AuthProvider>
     ),
     errorElement: <Error />,
   },
@@ -30,9 +30,9 @@ export const router = createBrowserRouter([
   {
     path: "/create",
     element: (
-      <AuthProvider>
+      // <AuthProvider>
         <FormDocuments />
-      </AuthProvider>
+      // </AuthProvider>
     ),
     errorElement: <Error />,
   },

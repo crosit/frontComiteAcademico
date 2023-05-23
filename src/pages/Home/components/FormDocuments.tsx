@@ -126,7 +126,7 @@ const FormDocuments = () => {
   }, [fileData]);
 
   return (
-    <>
+    <div style={{ margin: '20px' }}>
       <div
         style={{
           display: "flex",
@@ -163,9 +163,7 @@ const FormDocuments = () => {
               e.key === "Enter" && e.preventDefault();
             }}
           >
-            {!loading ? (
-              <CustomSkeleton rows={3} />
-            ) : (
+            {
               renderFields({
                 posting,
                 fieldsDefinition: getFieldsMetadata({ t }),
@@ -182,11 +180,11 @@ const FormDocuments = () => {
                 dataCDP,
                 setDataCDP,
               })
-            )}
+            }
           </Form>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
