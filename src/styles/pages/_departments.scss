@@ -1,0 +1,30 @@
+@use "../base/variables";
+
+.departmentContainer {
+  width: 400px;
+  height: 170px;
+  margin: 10px;
+
+  .nameDepartment {
+    color: variables.$color-secondary;
+    font-weight: 700;
+    font-size: 1.8rem;
+  }
+  .descripcionDepartment {
+    color: variables.$color-secondary;
+    font-weight: 700;
+    font-size: 1rem;
+  }
+  .companieDepartment {
+    font-weight: 700;
+    font-size: 1rem;
+    color: variables.$color-secondary;
+  }
+}
+
+.headerDepartments {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+

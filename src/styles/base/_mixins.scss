@@ -1,34 +1,26 @@
-@use "./variables";
+@use './variables';
 
 //Mixin button
 // Types:
 // - outline: Se rellena el bg-color en el hover
 // - plain: No tiene animación
 // - fulfilled: Está rellenado desde el principio con el color principal  **A considerar
-@mixin type-button($border-color, $bg-color, $type: "outline") {
-  border-color: $border-color !important;
-  background-color: $bg-color;
-  color: variables.$font-color-primary !important;
-  border-width: 0.3vh;
-  font-family: variables.$font-text-montserrat;
-  border-radius: 8px !important;
-  width: -moz-fit-content !important;
-  width: fit-content !important;
+@mixin type-button($border-color, $bg-color, $type: 'outline'){
+    border-color: $border-color !important;
+    background-color: $bg-color;
+    color: variables.$font-color-primary !important;
+    border-width: .3vh;
+    font-family: variables.$font-text-montserrat;
+    border-radius: 8px !important;
+    width: -moz-fit-content !important;
+    width: fit-content !important;
 
-  font-weight: bold;
+    font-weight: bold;
 
-  @if ($type == "outline") {
-    &:hover {
-      background-color: variables.$color-main !important;
-      transition: 750ms;
+    @if ($type == 'outline'){
+        &:hover {
+            background-color: variables.$color-main !important;
+            transition: 750ms;
+        }
     }
-  }
-}
-
-body, html {
-  font-family: variables.$font-text-montserrat;
-  color: variables.$font-color-primary;
-  margin: 0;
-  padding: 0;
-  background-color: #EEEEEE;
 }

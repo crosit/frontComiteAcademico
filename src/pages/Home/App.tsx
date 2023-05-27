@@ -61,12 +61,8 @@ function App() {
   const navigate = useNavigate();
 
   return (
-    <div
-      style={{
-        height: "90vh",
-      }}
-    >
-      <div style={{ marginTop: '50px', marginRight: '90px', display: 'flex', justifyContent: 'end' }}>
+    <div>
+      <div style={{ marginTop: '50px',marginBottom: '50px', marginRight: '90px', display: 'flex', justifyContent: 'end' }}>
         <Button
           onClick={() => navigate("/create")}
         >
@@ -102,17 +98,6 @@ function App() {
                 style={{ background: "#45C27A" }}
               />,
               <Button icon={<CloseOutlined />} type="primary" danger />,
-              <Button
-                icon={<CheckOutlined />}
-                type="primary"
-                style={{ background: "#45C27A" }}
-              />,
-              <Button icon={<CloseOutlined />} type="primary" danger />,
-              <Button
-                icon={<CheckOutlined />}
-                type="primary"
-                style={{ background: "#45C27A" }}
-              />,
             ]}
           >
             <div

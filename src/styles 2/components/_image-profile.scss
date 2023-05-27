@@ -1,0 +1,51 @@
+@use '../base/variables';
+
+.image-profile-container {
+    padding-top: 30%;
+}
+
+.mask {
+    // display: none;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 13em !important;
+    height: 13em !important;
+    border-radius: 150px;
+    z-index: 10;
+    opacity: 0;
+    word-break: break-all;
+
+    &:hover {
+        background-color: #ffc85850;
+        opacity: 40;
+        transition: 0.5s;
+    }
+
+    span {
+        text-align: center;
+        font-weight: bolder;
+        color: black;
+        font-size: large;
+    }
+}
+
+.image-profile {
+    width: 13em !important;
+    height: 13em !important;
+    border-radius: 150px;
+    z-index: -10;
+
+}
+
+.button-image-profile {
+    height: 13em;
+    width: 13em;
+    background-color: transparent;
+    border-color: transparent;
+    border-radius: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

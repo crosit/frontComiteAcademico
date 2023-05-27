@@ -1,0 +1,29 @@
+@use "../base/variables";
+
+  .input-primary {
+    background-color: white;
+    color: variables.$color-black;
+    border: 1px solid variables.$color-main;
+    border-radius: 8px;
+    &:focus {
+      outline: none;
+      border: 1px solid variables.$color-main;
+    }
+    &:hover{
+      border: 1px solid variables.$color-main;
+    }
+  }
+
+  .input-border-primary {
+    background-color: white;
+    color: variables.$color-black;
+    border: 1px solid #FFD570;
+    &:focus {
+      outline: none;
+      border: 1px solid variables.$color-main;
+    }
+    &:hover{
+      border: 1px solid variables.$color-main;
+    }
+  }
+

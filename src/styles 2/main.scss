@@ -5,12 +5,11 @@
 //Layouts
 @use './layout/headerNav';
 @use './layout/root';
-@use './layout/flags';
 @use './layout/menu-profile';
 @use './layout/footer';
-@use './layout/form-container-checkbox';
 
 //Components
+@use './components/button';
 @use './components/image-profile';
 @use './components/profile-drawer';
 @use './components/divider';
@@ -30,13 +29,10 @@
 @use './components/cardBasic';
 
 // Pages
-@use './pages/app';
+
 @use './pages/login';
-@use './pages/home';
-@use './pages/forgot-password';
-@use './pages/departments';
-@use './pages/error';
-@use './pages/users';
+
+
 
 // Imports Fonts
 @import url('https://fonts.googleapis.com/css?family=Caveat');

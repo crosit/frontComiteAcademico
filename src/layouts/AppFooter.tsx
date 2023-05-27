@@ -5,7 +5,7 @@ const AppFooter = () => {
 
   return (
     <div>
-      <b>Sabeeo</b> {t('common.footerSabeeo')} <b>KINCE IT 🐝</b>
+      Powered by  <b>Chris 🎮</b>
     </div>
   );
 };

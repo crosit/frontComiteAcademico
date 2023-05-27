@@ -1,0 +1,21 @@
+@use '../base/variables';
+@use '../base/mixins';
+
+.card{
+  border-radius: 16px;
+  padding: 1rem;
+  background: variables.$color-black;
+  background-image: url('/src/assets/fondo-login.jpg');
+  background-size: cover;
+  background-position: center;
+  color: variables.$color-secondary;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 1px 1px 8px 0 rgba(0, 0, 0, 0.4);
+}
+
+.szh-menu{
+  width: 10px !important;
+}

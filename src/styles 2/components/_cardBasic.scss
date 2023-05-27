@@ -1,0 +1,52 @@
+@use "../base/variables";
+
+.cardBasicContainer {
+  background-image: url("/src/assets/fondo-login.jpg");
+  background-size: cover;
+  height: 200px;
+  width: 420px;
+
+  // min-width: 420px;
+  // min-height: 200px;
+}
+
+.cardBasicTitle {
+  display: block;
+  font-size: 20px;
+  color: white;
+  font-weight: bold;
+
+}
+
+.cardBasicBody {
+  // color: white;
+  font-size: large;
+}
+
+.card-basic {
+  // display: grid;
+  // grid-template-columns: repeat(2, 1fr);
+  // color: white;
+  // row-gap: 15px;
+
+  display: flex;
+  flex-wrap: wrap;
+  color: white;
+  justify-content: center;
+
+  &__content {
+    line-height: 20px;
+    text-align: left;
+    margin: .5rem;
+
+    &__title {
+      font-weight: bold;
+      color: variables.$color-main;
+    }
+
+    &__text {
+      font-size: medium;
+      word-break: keep-all;
+    }
+  }
+}

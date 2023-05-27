@@ -1,0 +1,15 @@
+@use '../base/variables';
+
+.pruebaSCSS {
+  height: 100px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: variables.$bg-color-secondary;
+  color: variables.$font-color-secondary;
+  font-size: 50px;
+  text-decoration: underline;
+  font-family: variables.$font-text-caveat;
+}

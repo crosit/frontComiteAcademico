@@ -1,0 +1,208 @@
+@use "../base/variables";
+@use "../base/mixins";
+
+// .button {
+//     border-color: variables.$color-main;
+//     background-color: white;
+//     color: variables.$font-color-primary !important;
+
+//     &:hover {
+//         background-color: variables.$color-main;
+//         border-color: variables.$color-main !important;
+//         transition: 750;
+//     }
+
+// }
+
+.button-outline-border-main {
+  @include mixins.type-button(
+    $bg-color: white,
+    $border-color: variables.$color-main,
+    $type: "outline"
+  );
+}
+
+.button-outline-border-white {
+  @include mixins.type-button(
+    $bg-color: white,
+    $border-color: white,
+    $type: "outline"
+  );
+}
+
+.button-outline-border-black {
+  @include mixins.type-button(
+    $bg-color: white,
+    $border-color: variables.$color-black,
+    $type: "outline"
+  );
+}
+
+.button-outline-bgColor-main {
+  @include mixins.type-button(
+    $bg-color: variables.$color-main,
+    $border-color: variables.$color-main,
+    $type: "outline"
+  );
+}
+
+.button-outline-bgColor-white {
+  @include mixins.type-button(
+    $bg-color: white,
+    $border-color: white,
+    $type: "outline"
+  );
+}
+
+.button-plain-border-main {
+  @include mixins.type-button(
+    $bg-color: white,
+    $border-color: variables.$color-main,
+    $type: "plain"
+  );
+}
+
+.button-plain-border-white {
+  @include mixins.type-button(
+    $bg-color: white,
+    $border-color: white,
+    $type: "plain"
+  );
+}
+
+.button-plain-border-black {
+  @include mixins.type-button(
+    $bg-color: white,
+    $border-color: variables.$color-black,
+    $type: "plain"
+  );
+}
+
+.button-plain-bgColor-main {
+  @include mixins.type-button(
+    $bg-color: variables.$color-main,
+    $border-color: variables.$color-main,
+    $type: "plain"
+  );
+}
+
+.button-plain-bgColor-white {
+    @include mixins.type-button($bg-color: white, $border-color: white, $type: 'plain');
+
+    &__option {
+        @include mixins.type-button($bg-color: white, $border-color: white, $type: 'plain');
+        width: 100% !important;
+        display: flex;
+        justify-content: start;
+    }
+}
+
+.button-lng-white {
+  font-family: variables.$font-text-montserrat;
+  font-weight: bold;
+  background-color: transparent;
+  color: white;
+  position: absolute;
+  bottom: 2%;
+  left: 2%;
+}
+
+.button-lng-black {
+  font-family: variables.$font-text-montserrat;
+  font-weight: bold;
+  background-color: transparent;
+  color: variables.$color-black;
+  position: absolute;
+  bottom: 2%;
+  left: 2%;
+}
+
+.button-lng-header {
+  @include mixins.type-button(
+    $bg-color: transparent,
+    $border-color: transparent,
+    $type: "plain"
+  );
+  padding-top: 2% !important;
+  width: 20% !important;
+  height: 50px !important;
+}
+
+.button-login {
+  @include mixins.type-button(
+    $bg-color: variables.$color-main,
+    $border-color: variables.$color-main,
+    $type: "plain"
+  );
+  height: fit-content !important;
+  font-weight: bold;
+
+  span {
+    font-size: 24px;
+  }
+}
+
+.button-back-login {
+  @include mixins.type-button(
+    $bg-color: transparent,
+    $border-color: variables.$color-main,
+    $type: "outline"
+  );
+  height: fit-content !important;
+  font-weight: bold;
+
+  &:hover span {
+    color: black;
+    font-weight: bold;
+    font-size: 19px;
+  }
+
+  span {
+    font-size: 20px;
+    font-weight: lighter;
+    color: variables.$color-main;
+
+    &:hover {
+      color: black;
+      font-weight: bold;
+      font-size: 19px;
+    }
+  }
+}
+
+.ant-btn.ant-btn-primary,
+.ant-btn-primary {
+  background-color: #ffc858;
+  color: #232323;
+  font-weight: bold;
+  border-color: #ffc858;
+  &:hover {
+    background-color: #232323 !important;
+  }
+  &:disabled {
+    background-color: #ffc85850 !important;
+    color: #232323 !important;
+    border-color: #ffc858 !important;
+  }
+}
+
+.ant-input:hover {
+  border-color: #ffc858;
+  outline: 0;
+}
+
+.ant-select-selection {
+  max-height: 51px;
+  overflow: auto;
+  background: #f5f;
+}
+
+.button-text-white {
+  font-size: large;
+  color: white;
+
+  &:hover {
+    color: variables.$color-main !important;
+    font-size: larger;
+  }
+}

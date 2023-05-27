@@ -1,0 +1,46 @@
+@use "../base/variables";
+
+.cardCustomContainer {
+  background-image: url("/src/assets/fondo-login.jpg");
+  background-size: cover;
+  height: fit-content;
+  width: 420px;
+  border-radius: 16px;
+  word-break: break-all;
+  margin: 5px;
+  // min-width: 420px;
+  // min-height: 200px;
+}
+
+.containerCardCustom {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  // background-color: red !important;
+}
+
+.cardCustomTitle {
+  font-size: 25px;
+  font-weight: bold;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  color: variables.$color-main;
+
+}
+
+.cardCustomCompany {
+  // style={{ color: 'yellow', marginLeft: 6 }};
+  color: white;
+  margin-left: 5px;
+  font-size: medium;
+  font-weight: 700;
+}
+
+.card-custom__header {
+  // style={{ display: 'grid', gridTemplateColumns: '(3,1fr)',  alignItems: 'center', marginTop: -10, }}
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin-top: -10px;
+}

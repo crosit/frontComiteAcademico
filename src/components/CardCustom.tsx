@@ -197,7 +197,7 @@ Props) {
           <div style={{ display: "flex", alignItems: "center" }}>
             <ExclamationCircleOutlined
               style={{
-                color: "#ffc858",
+                color: "#336FE4",
                 marginRight: "5px",
                 fontSize: "1.5rem",
               }}
@@ -205,12 +205,12 @@ Props) {
             {t("table.deleteConfirmationTitle")}
           </div>
         }
-        style={{ border: "2px solid #ffc858", borderRadius: 10 }}
+        style={{ border: "2px solid #336FE4", borderRadius: 10 }}
         centered
         open={open}
         okText={t("table.deleteConfirmationYes")}
         cancelText={t("table.deleteConfirmationNo")}
-        okButtonProps={{ style: { background: "#ffc858", color: "#232323" } }}
+        okButtonProps={{ style: { background: "#336FE4", color: "#232323" } }}
         cancelButtonProps={{ style: { background: "#232323", color: "#fff" } }}
         onOk={handleSubmit}
         onCancel={handleClose}

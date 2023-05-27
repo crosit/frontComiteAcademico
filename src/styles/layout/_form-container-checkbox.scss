@@ -1,0 +1,33 @@
+@use '../base/variables';
+
+.form-container-checkbox {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    color: white;
+    row-gap: 15px;
+
+    &__content {
+        line-height: 20px;
+        text-align: left;
+        margin: 0px 0px 0px 8px;
+
+        &__link {
+            color: variables.$color-main;
+            line-height: 20px;
+            text-align: left;
+            margin: 0px 0px 0px 8px;
+        }
+    }
+
+
+    //     &__title {
+    //         font-weight: bold;
+    //         color: variables.$color-main;
+
+    //     }
+
+    //     &__text {
+    //         font-size: medium;
+    //     }
+    // }
+}

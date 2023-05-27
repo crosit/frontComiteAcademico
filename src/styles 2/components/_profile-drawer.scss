@@ -1,0 +1,49 @@
+@use '../base/variables';
+
+.profile-drawer-container {
+    height: 100%;
+    // background-color: red;
+}
+
+.profile-drawer-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    word-wrap: break-word;
+    justify-content: space-around;
+}
+
+.profile-drawer-item {
+    padding-bottom: 8%;
+}
+
+.profile-drawer-body {
+    padding: 0.1em;
+    height: 60%;
+    width: 100%;
+    word-wrap: break-word;
+    text-align: center;
+    // background-color: red;
+
+    .name {
+        font-weight: bold;
+        color: variables.$color-main;
+        display: inline-block;
+        margin-bottom: 5%;
+    }
+
+    .item {
+        color: variables.$color-secondary;
+    }
+}
+
+.profile-drawer-footer {
+    height: 100%;
+    width: 100%;
+    // background-color: blue;
+    word-wrap: break-word;
+}
+
+.button-change-image {
+    color: variables.$color-main;
+}

@@ -20,7 +20,7 @@ import useLogicModal from "../hooks/useLogicModal";
 import ModalSimple from "../components/ModalSimple";
 import ContentModalCloseSession from "../components/ContentModalCloseSession";
 import { useCloseSession } from "../hooks";
-import logo from "/src/assets/logo.png";
+import logo from "/src/assets/logo_uni.jpeg";
 import userImage from "/src/assets/userImage.png";
 import { isSpanish } from "../utilities";
 import { MX, US } from "country-flag-icons/react/3x2";
@@ -190,7 +190,7 @@ const HeaderNav = () => {
             <div>
               <Badge
                 count={noReadNotifications}
-                color="#ffc858"
+                color="#336FE4"
                 style={{ color: "#232323", fontWeight: "bold", marginRight: 6 }}
               >
                 <Popover
@@ -198,7 +198,7 @@ const HeaderNav = () => {
                     <Typography.Title
                       level={4}
                       style={{
-                        background: "#ffc858",
+                        background: "#336FE4",
                         margin: "-12px -12px 0 -12px",
                         borderRadius: "7px 7px 0px 0px",
                         padding: ".7rem",
@@ -247,7 +247,7 @@ const HeaderNav = () => {
                 transition
               >
                 {buttons.map((button: any) =>
-                  button.type === "menu" && (button.admin && user.isAdmin || !button.admin) ? (
+                  button.type === "menu" && ( !button.admin) ? (
                     <SubMenu
                       key={button.name}
                       label={
@@ -288,7 +288,7 @@ const HeaderNav = () => {
                       ))}
                     </SubMenu>
                   ) : (
-                    (button.admin && user.isAdmin || !button.admin) && (
+                    ( !button.admin) && (
                       <MenuItem
                         key={button.name}
                         style={{
@@ -316,7 +316,7 @@ const HeaderNav = () => {
           </div>
           <div className="nav">
             {buttons.map((button: any) =>
-              button?.type === "menu" && (button.admin && user.isAdmin || !button.admin) ? (
+              button?.type === "menu" && ( !button.admin) ? (
                 <MenuDropdown
                   className="navItem"
                   key={button.name}
@@ -325,7 +325,7 @@ const HeaderNav = () => {
                   toolTip={button.toolTip}
                 />
               ) : (
-                (button.admin && user.isAdmin || !button.admin) && (
+                ( !button.admin) && (
                   <HexaIconButton
                     key={button.name}
                     className="navItem"
@@ -340,7 +340,7 @@ const HeaderNav = () => {
             )}
             <Badge
               count={noReadNotifications}
-              color="#ffc858"
+              color="#336FE4"
               style={{ color: "#232323", fontWeight: "bold" }}
             >
               <Popover
@@ -348,7 +348,7 @@ const HeaderNav = () => {
                   <Typography.Title
                     level={4}
                     style={{
-                      background: "#ffc858",
+                      background: "#336FE4",
                       margin: "-12px -12px 0 -12px",
                       borderRadius: "7px 7px 0px 0px",
                       padding: ".7rem",
@@ -379,7 +379,7 @@ const HeaderNav = () => {
                 <Tooltip placement="bottom" title={t("headerNav.profile")}>
                   <img
                     className="userImage"
-                    src={ user.profile_photo || '/src/assets/user.png' }
+                    src={ '/src/assets/user.png' }
                     width={200}
                     alt="logo"
                     onClick={() => {
@@ -388,30 +388,9 @@ const HeaderNav = () => {
                   />
                 </Tooltip>
 
-                <Tooltip placement="bottom" title={t("common.btn-change-lng")}>
-                  <Btn
-                    startIcon={
-                      isSpanish() ? (
-                        <MX title="México" className="flags-hexa" />
-                      ) : (
-                        <US title="United States" className="flags-hexa" />
-                      )
-                    }
-                    onClick={() => {
-                      isSpanish()
-                        ? i18next.changeLanguage("en")
-                        : i18next.changeLanguage("es");
-                      window.location.reload();
-                      dispatch(reloadTable());
-                    }}
-                    text={""}
-                    size={SizesButton.SMALL}
-                    className="button-lng-header"
-                  />
-                </Tooltip>
-
                 <Tooltip placement="bottom" title={t("headerNav.logout")}>
                   <LogoutOutlined
+                    style={{ color: "white" }}
                     className="logout"
                     onClick={handleOpenCloseSession}
                   />

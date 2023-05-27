@@ -1,0 +1,303 @@
+@use "../base/variables";
+@use "../base/mixins";
+
+.HexaPath {
+  transform: rotate(30deg);
+  transform-origin: 50% 50%;
+}
+
+.HexaPath--primary {
+  stroke: #232323;
+  stroke-width: 9px;
+  fill: #fff8eb;
+}
+
+.HexaPath--secondary {
+  stroke: #fff;
+  stroke-width: 9px;
+  fill: #232323;
+}
+
+.HexaPath--warning {
+  stroke: #ffc858;
+  stroke-width: 9px;
+  fill: #ffc858;
+}
+
+.HexaPath--warning-secondary {
+  stroke: #ffc858;
+  stroke-width: 9px;
+  fill: #ffc858;
+}
+
+.HexaPath--success {
+  stroke: #a6ce6f;
+  stroke-width: 9px;
+  fill: #a6ce6f;
+}
+
+.HexaPath--danger {
+  stroke: #c40000;
+  stroke-width: 9px;
+  fill: #c40000;
+}
+
+.HexaPath--info {
+  stroke: #1979cf;
+  stroke-width: 9px;
+  fill: #1979cf;
+}
+
+.HexaIconContainer {
+  position: relative;
+  cursor: pointer;
+}
+
+.HexaIconContainer--small {
+  width: 50px;
+  height: 50px;
+}
+
+.HexaIconContainer--middle {
+  width: 70px;
+  height: 70px;
+}
+
+.HexaIconContainer--large {
+  width: 90px;
+  height: 90px;
+}
+
+.HexaIconContainer--tiny {
+  width: 30px;
+  height: 30px;
+}
+
+.HexaIconContainer--disabled {
+  position: relative;
+  cursor: pointer;
+  filter: opacity(0.7);
+}
+
+.HexaSvg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.HexaIconContainer--primary:hover {
+  .HexaPath--primary {
+    transition: 0.3s;
+    stroke: #232323;
+    stroke-width: 0;
+    fill: #ffc858;
+  }
+}
+
+.HexaIconContainer--secondary:hover {
+  .HexaPath--secondary {
+    transition: 0.3s;
+    stroke: #fff;
+    stroke-width: 0;
+    fill: #ffc858;
+  }
+  .HexaIcon--secondary {
+    svg {
+      transition: 0.3s;
+      width: 100%;
+      height: 100%;
+      fill: #232323;
+    }
+  }
+}
+
+.HexaIconContainer--warning:hover {
+  .HexaPath--warning {
+    transition: 0.3s;
+    stroke: #ffc858;
+    stroke-width: 0;
+    fill: #ffc858;
+  }
+}
+
+.HexaIconContainer--warning-secondary:hover {
+  .HexaPath--warning {
+    transition: 0.3s;
+    stroke: #ffc858;
+    stroke-width: 0;
+    fill: #ffc858;
+  }
+}
+
+.HexaIconContainer--success:hover {
+  .HexaPath--success {
+    transition: 0.3s;
+    stroke: #a6ce6f;
+    stroke-width: 0;
+    fill: #a6ce6f;
+  }
+}
+
+.HexaIconContainer--danger:hover {
+  .HexaPath--danger {
+    transition: 0.3s;
+    stroke: #c40000;
+    stroke-width: 0;
+    fill: #c40000;
+  }
+}
+
+.HexaIconContainer--info:hover {
+  .HexaPath--info {
+    transition: 0.3s;
+    stroke: #1979cf;
+    stroke-width: 0;
+    fill: #1979cf;
+  }
+}
+
+.HexaIcon {
+  position: absolute;
+  z-index: 1;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -55%);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.HexaIcon--primary {
+  svg {
+    width: 100%;
+    height: 100%;
+    fill: #232323;
+  }
+}
+
+.HexaIcon--secondary {
+  svg {
+    width: 100%;
+    height: 100%;
+    fill: #fff;
+  }
+}
+
+.HexaIcon--warning {
+  svg {
+    width: 100%;
+    height: 100%;
+    fill: #fff;
+  }
+}
+
+.HexaIcon--warning-secondary {
+  svg {
+    width: 100%;
+    height: 100%;
+    fill: #232323;
+  }
+}
+
+.HexaIcon--success {
+  svg {
+    width: 100%;
+    height: 100%;
+    fill: #fff;
+  }
+}
+
+.HexaIcon--danger {
+  svg {
+    width: 100%;
+    height: 100%;
+    fill: #fff;
+  }
+}
+
+.HexaIcon--info {
+  svg {
+    width: 100%;
+    height: 100%;
+    fill: #fff;
+  }
+}
+
+.hex {
+  position: relative;
+  height: 50px;
+  min-width: 100px;
+  font-size: 18px;
+  color: white;
+}
+.hex svg {
+  height: 100%;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+  z-index: -1;
+  path {
+    fill: #232323;
+  }
+
+  &:hover {
+    path {
+      fill: #ffc858;
+    }
+  }
+}
+
+.hex.border {
+  position: relative;
+}
+
+.hex.border path {
+  stroke: white;
+  stroke-width: 2.5;
+}
+.spanHex {
+  width: max-content;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: inline-block;
+  
+  svg path {
+    fill: white !important;
+  }
+
+}
+
+.hexContainer {
+  position: relative;
+  cursor: pointer;
+  transition: 0.3s;
+  width: -moz-fit-content;
+  width: fit-content !important;
+
+  &:hover {
+    transform: scale(0.9);
+    color: #232323;
+    .hex.border path {
+      stroke: #ffc858;
+    }
+    .spanHex {
+      color: #232323;
+    }
+    path {
+      fill: #ffc858;
+    }
+    .spanHex svg path {
+      fill: #232323 !important;
+    }
+  }
+}

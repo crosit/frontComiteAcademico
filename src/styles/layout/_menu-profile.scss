@@ -1,0 +1,88 @@
+@use '../base/variables';
+
+/* Position and sizing of burger button */
+.bm-burger-button {
+    display: none;
+    position: fixed;
+    width: 36px;
+    height: 30px;
+    left: 90%;
+    top: 5%;
+
+    @media screen and (min-width: 1080px) {
+        left: 95%;
+    }
+}
+
+/* Color/shape of burger icon bars */
+.bm-burger-bars {
+    background: #373a47;
+}
+
+/* Color/shape of burger icon bars on hover*/
+.bm-burger-bars-hover {
+    background: #a90000;
+}
+
+/* Position and sizing of clickable cross button */
+.bm-cross-button {
+    height: 24px !important;
+    width: 24px !important;
+    left: 16px !important;
+    top: 10px !important;
+
+    svg {
+        width: 1.5em;
+        height: 1.5em;
+        color: variables.$color-main;
+    }
+}
+
+/* Color/shape of close button cross */
+.bm-cross {
+    background: variables.$color-main;
+    width: 4.5px !important;
+    height: 21px !important;
+}
+
+/*
+  Sidebar wrapper styles
+  Note: Beware of modifying this element as it can break the animations - you should not need to touch it in most cases
+  */
+.bm-menu-wrap {
+    position: fixed;
+    height: 100%;
+    width: min-content !important;
+}
+
+/* General sidebar styles */
+.bm-menu {
+    background-image: url('/src/assets/fondo-perfil.png') !important;
+    background-size: cover;
+    padding: 2.5em 1.5em 0;
+    font-size: 1.15em;
+    overflow: hidden !important;
+    width: 280px;
+}
+
+/* Morph shape necessary with bubble or elastic */
+.bm-morph-shape {
+    // fill: variables.$bg-color-secondary;
+    fill: #373a47;
+}
+
+/* Wrapper for item list */
+.bm-item-list {
+    color: #b8b7ad;
+    padding: 0.8em;
+}
+
+/* Individual item */
+.bm-item {
+    display: inline-block;
+}
+
+/* Styling of overlay */
+.bm-overlay {
+    background: rgba(0, 0, 0, 0.3);
+}

@@ -1,0 +1,49 @@
+@use '../base/variables';
+
+.error-container {
+    background-image: url('/src/assets/fondo-error.jpg') !important;
+    // background-image: url('https://img.freepik.com/foto-gratis/fondo-acuarela-pintada-mano-forma-cielo-nubes_24972-1095.jpg?w=2000') !important;
+    background-repeat: no-repeat !important;
+    background-size: 100% 100% !important;
+    background-attachment: fixed !important;
+    // margin-top: -2.5%;
+    // margin-bottom: -2.5%;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.error-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60%;
+    min-height: 100%;
+    // background-color: red;
+    // min-width: 320px;
+    // min-height: 100vh;
+}
+
+.error-title {
+    color: white;
+    height: 100px;
+    margin-bottom: 5%;
+    font-family: 'Phenomena';
+    font-size: 240px;
+
+    @media screen and (max-width: 1024px) {
+        font-size: 80px;
+    }
+}
+
+.error-text {
+    color: white;
+    font-size: 32px;
+    margin-bottom: 7%;
+    line-height: 120%;
+
+    @media screen and (max-width: 1024px) {
+        font-size: 20px;
+    }
+}

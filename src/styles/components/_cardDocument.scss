@@ -1,0 +1,108 @@
+@use "../base/variables";
+
+.cardContainer {
+  background: variables.$bg-color-secondary;
+  border-radius: 20px;
+  color: variables.$font-color-secondary;
+  display: flex;
+  flex-direction: column;
+  width: 275px;
+  height: 435px;
+  margin: 10px;
+  padding: 20px;
+}
+
+.headerCard {
+  display: flex;
+  justify-content: space-between;
+  .statusCard {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    color: variables.$color-main;
+    .statusText {
+      margin-left: 5px;
+    }
+  }
+  .viwersCard {
+    display: flex;
+    align-items: center;
+    color: lightgray;
+    span {
+      margin-left: 5px;
+    }
+  }
+}
+
+.bodyCard {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  height: 100%;
+
+  .titleCard {
+    margin-top: 20px;
+    color: variables.$color-main;
+    font-weight: bold;
+    font-size: 1.5rem;
+  }
+  .companieCard {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    .companieTitle {
+      font-weight: bold;
+      color: variables.$color-main;
+      font-size: 0.8rem;
+    }
+    .companieDescription {
+      font-size: 0.9rem;
+      text-align: start;
+    }
+  }
+  .departamentsCard {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    .departamentsTitle {
+      font-weight: bold;
+      color: variables.$color-main;
+      font-size: 0.8rem;
+    }
+    .departamentsDescription {
+      font-size: 0.9rem;
+      text-align: start;
+    }
+  }
+
+  .dateCard {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    .dateTitle {
+      font-weight: bold;
+      color: variables.$color-main;
+      font-size: 0.8rem;
+    }
+    .dateDescription {
+      font-size: 0.9rem;
+      text-align: start;
+    }
+  }
+}
+
+.footerCard {
+  display: flex;
+  justify-content: end;
+  
+
+  .iconFooter {
+    transition: ease 0.2s;
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}

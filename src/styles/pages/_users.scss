@@ -1,0 +1,36 @@
+@use '../base/variables';
+
+.cardUserLineHeaderTwo {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    padding: 4px;
+    color: variables.$color-main;
+}
+
+.cardUserLineTwo {
+    display: flex;
+    justify-content: space-between;
+    font-size: 15px;
+}
+
+.cardUserLineHeaderOne {
+    // display: flex;
+    // justify-content: start;
+    font-weight: bold;
+    color: variables.$color-main;
+    font-size: 15px;
+}
+
+.cardUserLineOne {
+    display: flex;
+    justify-content: start;
+    font-size: 15px;
+}
+
+.cardUserLineDate {
+    display: flex;
+    justify-content: start;
+    font-size: 15px;
+    font-weight: 100;
+}

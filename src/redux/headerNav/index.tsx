@@ -47,46 +47,46 @@ const initialState: HeaderNavState = {
       path:'/',
       admin: false
     },
-    {
-      name: "Administrador",
-      toolTip: "headerNav.admin",
-      icon: <UserOutlined />,
-      path:'/documents',
-      admin: true
-    },
-    {
-      name: "Catálogos",
-      toolTip: "headerNav.catalogs",
-      icon: <BookOutlined />,
-      type: "menu",
-      admin: true,
-      menu: [
-        {
-          name: "Departamentos",
-          toolTip: "departments.title",
-          icon: <AppstoreOutlined />,
-          path: '/departments'
-        },
-        {
-          name: 'Puestos',
-          toolTip: 'positions.title',
-          icon: <ApartmentOutlined />,
-          path: '/positions'
-        },
-        {
-          name: 'Companies',
-          toolTip: 'common.companies',
-          icon: <TrademarkCircleOutlined />,
-          path: '/companies'
-        },
-        {
-          name: 'Usuarios',
-          toolTip: 'common.users',
-          icon: <TeamOutlined />,
-          path: '/users'
-        },
-      ],
-    }
+    // {
+    //   name: "Administrador",
+    //   toolTip: "headerNav.admin",
+    //   icon: <UserOutlined />,
+    //   path:'/documents',
+    //   admin: true
+    // },
+    // {
+    //   name: "Catálogos",
+    //   toolTip: "headerNav.catalogs",
+    //   icon: <BookOutlined />,
+    //   type: "menu",
+    //   admin: true,
+    //   menu: [
+    //     {
+    //       name: "Departamentos",
+    //       toolTip: "departments.title",
+    //       icon: <AppstoreOutlined />,
+    //       path: '/departments'
+    //     },
+    //     {
+    //       name: 'Puestos',
+    //       toolTip: 'positions.title',
+    //       icon: <ApartmentOutlined />,
+    //       path: '/positions'
+    //     },
+    //     {
+    //       name: 'Companies',
+    //       toolTip: 'common.companies',
+    //       icon: <TrademarkCircleOutlined />,
+    //       path: '/companies'
+    //     },
+    //     {
+    //       name: 'Usuarios',
+    //       toolTip: 'common.users',
+    //       icon: <TeamOutlined />,
+    //       path: '/users'
+    //     },
+    //   ],
+    // }
   ],
 };
 

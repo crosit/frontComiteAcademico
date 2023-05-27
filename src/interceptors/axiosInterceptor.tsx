@@ -34,12 +34,12 @@ service.interceptors.response.use(
     if (error.response.status === 401) {
       errorMessage = responseMessage;
 
-      localStorage.removeItem("sabeeoToken");
-      localStorage.removeItem("user");
-      setTimeout(() => {
-        historyWeb.push("/login");
-        window.location.reload();
-      }, 2000);
+      // localStorage.removeItem("sabeeoToken");
+      // localStorage.removeItem("user");
+      // setTimeout(() => {
+      //   historyWeb.push("/login");
+      //   window.location.reload();
+      // }, 2000);
     }
 
     if (error.response.status === 404) errorMessage = responseMessage;
@@ -48,13 +48,13 @@ service.interceptors.response.use(
 
     if (error.response.status === 403) {
       //errorMessage = responseMessage;
-      errorMessage = 'Unauthorized'
-      localStorage.removeItem("sabeeoToken");
-      localStorage.removeItem("user");
-      setTimeout(() => {
-        historyWeb.push("/login");
-        window.location.reload();
-      }, 2000);
+      // errorMessage = 'Unauthorized'
+      // localStorage.removeItem("sabeeoToken");
+      // localStorage.removeItem("user");
+      // setTimeout(() => {
+      //   historyWeb.push("/login");
+      //   window.location.reload();
+      // }, 2000);
     }
 
     if (error.response.status === 500) errorMessage = responseMessage;

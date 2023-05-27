@@ -7,13 +7,17 @@ import ForgotPassword from "./ForgotPassword/ForgotPassword";
 import RecoverPassword from "./RecoverPassword/RecoverPassword";
 import { Error403 } from "./Errors/Error403";
 import FormDocuments from "./Home/components/FormDocuments";
+import { AppLayout } from "../layouts";
 
 export const router = createBrowserRouter([
   {
     path: "/",
     element: (
       // <AuthProvider>
+      
+      <AppLayout>
         <App />
+      </AppLayout>
       // </AuthProvider>
     ),
     errorElement: <Error />,
@@ -31,7 +35,10 @@ export const router = createBrowserRouter([
     path: "/create",
     element: (
       // <AuthProvider>
+      <AppLayout>
+
         <FormDocuments />
+      </AppLayout>
       // </AuthProvider>
     ),
     errorElement: <Error />,

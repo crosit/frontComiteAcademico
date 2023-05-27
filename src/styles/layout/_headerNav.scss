@@ -1,0 +1,116 @@
+.headerContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+  .logo {
+    margin-left: 1rem;
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+  }
+  .navContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .nav {
+      display: flex;
+
+      align-items: center;
+    }
+    .navMobile {
+      display: flex;
+      align-items: center;
+      margin-right: 2rem;
+      margin-top: 1rem;
+    }
+    .navItem {
+      margin: 0 0.6rem;
+    }
+  }
+
+  @media (max-width: 1420px) {
+    margin-bottom: 0%;
+  }
+}
+
+.userNav {
+  display: flex;
+  box-sizing: border-box;
+  min-height: 80px;
+  padding: 20px 20px 20px 20px;
+  position: relative;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  top: 0;
+  left: 0;
+  width: 300px;
+
+  .svgUser {
+    fill: #336FE4;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+    stroke: #336FE4;
+    width: 100%;
+    transform: rotate(180deg);
+  }
+
+  .userContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    .userImage {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+    }
+    .logout {
+      color: #232323;
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-left: 16px;
+    }
+  }
+}
+
+.szh-menu{
+  min-width: 4.2rem !important;
+}
+.szh-menu__submenu > .szh-menu__item::after {
+  content: "" !important;
+  position: absolute;
+}
+
+.szh-menu__submenu{
+  margin-right: 2rem;
+  background: none;
+}
+
+.szh-menu__item {
+  background: none !important;
+}
+
+#symbols {
+  display: none;
+}
+
+@media screen and (max-width: 700px) {
+  .nav {
+    display: none !important;
+  }
+}
+
+// @media screen and (min-width: 640px) and (max-width: 1280px) {
+//   .menu {
+//     background: red;
+//   }
+// }
+
+@media screen and (min-width: 700px) {
+  .navMobile {
+    display: none !important;
+  }
+}
