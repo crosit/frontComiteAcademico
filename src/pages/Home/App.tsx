@@ -11,10 +11,11 @@ import animationData from "../../assets/lottie/lottie-loading2.json";
 import { useRef, useEffect } from "react";
 import Lottie from "lottie-web";
 import { Button, Card, Space } from "antd";
-import { CheckOutlined, CloseOutlined } from "@ant-design/icons";
+import { ArrowRightOutlined, CheckOutlined, CloseOutlined } from "@ant-design/icons";
+import { formatDateReverse } from "../../utilities/formats";
 
 function App() {
-  // const { documents, isLoading, handleRefetch } = useUserViewDocuments();
+  const { documents, isLoading, handleRefetch } = useUserViewDocuments();
 
   // const defaultOptions = {
   //   loop: true,
@@ -37,26 +38,7 @@ function App() {
   //   });
   // }, [documents]);
 
-  const cardData = [
-    {
-      title: "Titulo 1",
-      description:
-        "Esta es la descripción de la tarjeta 3, descripción larga, se puede ver que se ajusta al tamaño de la tarjeta, y se ve bien.",
-      creationDate: "2023-05-19",
-    },
-    {
-      title: "Titulo 2",
-      description:
-        "Esta es la descripción de la tarjeta 3, descripción larga, se puede ver que se ajusta al tamaño de la tarjeta, y se ve bien.",
-      creationDate: "2023-05-20",
-    },
-    {
-      title: "Titulo 3",
-      description:
-        "Esta es la descripción de la tarjeta 3, descripción larga, se puede ver que se ajusta al tamaño de la tarjeta, y se ve bien.",
-      creationDate: "2023-05-21",
-    },
-  ];
+  console.log(documents);
 
   const navigate = useNavigate();
 
@@ -66,7 +48,7 @@ function App() {
         <Button
           onClick={() => navigate("/create")}
         >
-          Crear nueva peticion
+          Crear nueva solicitud
         </Button>
       </div>
       <div
@@ -75,18 +57,20 @@ function App() {
           justifyContent: "center",
           alignItems: "center",
           height: "100%",
+          flexWrap: "wrap",
         }}
       >
-        {cardData.map((card, index) => (
+        {documents?.map((card:any, index:number) => (
           <Card
             key={index}
             headStyle={{ background: "#3B76EC", color: "white" }}
-            title={card.title}
+            title={card.nombreDocumento}
             style={{
               background: "#3B76EC",
               color: "white",
               margin: "16px",
-              maxWidth: "350px",
+              minWidth: "300px",
+              maxWidth: "300px",
               borderRadius: "8px",
               borderColor: "#3B76EC",
               borderWidth: "2px",
@@ -108,11 +92,14 @@ function App() {
                 justifyContent: "space-between",
               }}
             >
-              <p style={{ fontSize: 16 }}>{card.description}</p>
+              <p style={{ fontSize: 16 }}>{card.descripcion}</p>
               <p style={{ fontSize: 16, fontWeight: "bold" }}>
-                Fecha de creación: {card.creationDate}
+                Fecha de creación: <br></br> {formatDateReverse({value: card.createdAt})}
               </p>
             </div>
+            <Button style={{ width: '100%', marginTop: '1rem' }} icon={<ArrowRightOutlined />}>
+              Ver solicitud
+            </Button>
           </Card>
         ))}
       </div>

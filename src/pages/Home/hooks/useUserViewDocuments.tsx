@@ -10,7 +10,7 @@ const useUserViewDocuments = () => {
   };
 
   return {
-    documents: documents?.data?.result,
+    documents: documents?.data?.data[0]?.solicitudes,
     isLoading: documents?.isLoading,
     handleRefetch
   };

@@ -9,9 +9,9 @@ export const initFields = [
 export const getFieldsMetadata = ({ t }: any) => {
   return {
     name: {
-      label: t("documents.table.title"),
-      name: "name",
-      placeholder: t("documents.table.title"),
+      label: 'Nombre del Documento',
+      name: "nombreDocumento",
+      placeholder: 'Nombre del Documento',
       rules: [
         {
           required: true,
@@ -20,9 +20,9 @@ export const getFieldsMetadata = ({ t }: any) => {
       ],
     },
     description: {
-      label: t("documents.table.description"),
-      name: "description",
-      placeholder: t("documents.table.description"),
+      label: 'Descripcion',
+      name: "descripcion",
+      placeholder: 'Descripcion',
       rules: [
         {
           required: true,
@@ -76,7 +76,7 @@ export const getFieldsMetadata = ({ t }: any) => {
     },
     pdf: {
       label: 'PDF',
-      name: "pdf",
+      name: "url",
       placeholder: 'PDF',
       rules: [
         {

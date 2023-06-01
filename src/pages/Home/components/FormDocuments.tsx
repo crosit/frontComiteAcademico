@@ -46,10 +46,9 @@ const FormDocuments = () => {
   const { loading, posting, isEditing, handleSubmit, miscs } = useGeneralForm({
     form,
     formFields: getFieldsMetadata({ t }),
-    apiURL: "/regulations",
-    moduleName: t("documents.title"),
-    urlReturn: "/documents",
-    miscsPath: "/regulations/misc",
+    apiURL: "/solicitud",
+    moduleName: 'solicitud',
+    urlReturn: "/"
   });
 
   const [fileList, setFileList] = useState<UploadFile[]>([]);
@@ -65,62 +64,22 @@ const FormDocuments = () => {
   const { handleUpload, fileData } = useFormDocument();
 
   const handleOnSubmit = async (values: any) => {
-    let data = {};
     const formData = new FormData();
 
-    formData.append("file", values.pdf.file);
+    formData.append("file", values.url.file);
     formData.append("module", "regulation");
-    const keyWordsData: any = [];
+    
+    //await handleUpload(formData);
 
-    keywords.forEach((item: any) => {
-      keyWordsData.push({
-        key: item,
-      });
-    });
-
-    const positionsData: any = [];
-    const companyData: any = [];
-
-    values.position.forEach((item: any) => {
-      positionsData.push({
-        positionId: item,
-      });
-    });
-
-    miscs.data.forEach((item: any) => {
-      values.company.forEach((item2: any) => {
-        if (item.id === item2) {
-          companyData.push({
-            id: item.id,
-            name: item.name,
-          });
-        }
-      });
-    });
-
-    await handleUpload(formData);
-
-    data = {
-      keyword: keyWordsData,
-      type: "pdf",
-      regulationType: values.type,
-      version: [
-        {
-          name: values.name,
-          description: values.description,
-          fileName: values.pdf.file.name,
-          positions: positionsData,
-        },
-      ],
-      companies: companyData,
-    };
-
-    setData(data);
+    //setData(values);
+    values.url = 'Example';
+    handleSubmit(values);
   };
 
   useEffect(() => {
     if (fileData) {
-      data.version[0].urlFile = fileData.location;
+      // data.version[0].urlFile = fileData.location;
+      data.url= 'Example';
       handleSubmit(data);
     }
   }, [fileData]);

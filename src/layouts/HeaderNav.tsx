@@ -75,15 +75,15 @@ const HeaderNav = () => {
     (state: any) => state.notifications.noRead
   );
 
-  useEffect(() => {
-    dispatch(getNoReadNotificationsAsync);
-  }, []);
+  // useEffect(() => {
+  //   dispatch(getNoReadNotificationsAsync);
+  // }, []);
 
-  useEffect(() => {
-    if (notifications?.notifications === true) {
-      dispatch(getNoReadNotificationsAsync);
-    }
-  }, [notifications]);
+  // useEffect(() => {
+  //   if (notifications?.notifications === true) {
+  //     dispatch(getNoReadNotificationsAsync);
+  //   }
+  // }, [notifications]);
 
   const [notificationsState, setNotificationsState] = useState("0");
 
@@ -339,9 +339,9 @@ const HeaderNav = () => {
               )
             )}
             <Badge
-              count={noReadNotifications}
+              count={noReadNotifications || 8}
               color="#336FE4"
-              style={{ color: "#232323", fontWeight: "bold" }}
+              style={{ color: "#fff", fontWeight: "bold" }}
             >
               <Popover
                 title={

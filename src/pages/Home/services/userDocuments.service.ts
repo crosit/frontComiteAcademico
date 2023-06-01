@@ -2,7 +2,7 @@ import axios from "../../../interceptors/axiosInterceptor";
 
 export const getUserDocuments = async () => {
     return await axios
-      .get('regulations/user?page=1&perPage=99999')
+      .get('solicitud')
       .then((res) => res)
       .catch((error) => {
         throw new Error(error);

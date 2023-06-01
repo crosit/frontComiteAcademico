@@ -23,8 +23,6 @@ export default function useRegister({ formik }: any) {
           fontWeight: "bold",
         },
       })
-
-      console.log('regisytrado')
     },
   });
 

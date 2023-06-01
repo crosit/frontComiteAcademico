@@ -14,15 +14,15 @@ export default function ProfileDrawer({}: Props) {
   const [data, setData] = useState<any>({});
 
 
-  const { profile, handleUpload, handleSubmit } = useProfile({
-    urlLocation, setUrlLocation
-  });
+  // const { profile, handleUpload, handleSubmit } = useProfile({
+  //   urlLocation, setUrlLocation
+  // });
 
   useEffect(() => {
     if (urlLocation) {
       data.profile_photo = urlLocation;
       userparse.profile_photo = urlLocation;
-      handleSubmit(data);
+      //handleSubmit(data);
       localStorage.setItem("user", JSON.stringify(userparse));
     } 
   }, [urlLocation]);
@@ -44,26 +44,21 @@ export default function ProfileDrawer({}: Props) {
                 console.log(e?.target?.files[0]);
                 const formData = new FormData();
                 formData.append("file", e?.target?.files[0]);
-                handleUpload(formData)
+                //handleUpload(formData)
               }}
             />
-            <ImageProfile photo={profile?.profile_photo} />
+            <ImageProfile photo={''} />
           </Button>
         </div>
       </div>
 
       <div className="profile-drawer-body">
-        <span className="name">{profile?.firstname} {profile?.lastname}</span>
+        <span className="name">{userparse.name}</span>
         <br />
 
-        <span className="item" style={{fontSize: '1rem'}}>{profile?.email}</span>
+        <span className="item" style={{fontSize: '1rem'}}>{userparse.email}</span>
         <br />
-        <span className="name" style={{marginTop: '1rem'}}>{profile?.company?.name}</span>
-        <br />
-        <span className="item">{profile?.position?.name}</span>
-        <br />
-        <span className="item">{profile?.position?.department?.name}</span>
-        <br />
+      
       </div>
 
       <div className="profile-drawer-footer"></div>

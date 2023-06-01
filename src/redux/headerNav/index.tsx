@@ -11,6 +11,7 @@ import {
   TrademarkCircleOutlined,
   TeamOutlined,
   UserOutlined,
+  UserAddOutlined,
 } from "@ant-design/icons";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
@@ -41,8 +42,15 @@ interface Buttons {
 const initialState: HeaderNavState = {
   buttons: [
     {
+      name: "NuevoUsuario",
+      toolTip: "Nuevo usuario",
+      icon: <UserAddOutlined />,
+      path:'/users/form',
+      admin: false
+    },
+    {
       name: "Documentos",
-      toolTip: "headerNav.documents",
+      toolTip: "Solicitudes",
       icon: <FileOutlined />,
       path:'/',
       admin: false

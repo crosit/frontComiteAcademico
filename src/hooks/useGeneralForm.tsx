@@ -51,7 +51,6 @@ const useGeneralForm = ({
             dataId ? "actualizado" : "registrado"
           } con éxito`,
           style: {
-            background: "#ffe7a6",
             borderRadius: "10px",
             fontWeight: "bold",
             // border: "2px solid #52C41A",
@@ -62,7 +61,6 @@ const useGeneralForm = ({
       onError: (error: any) => {
         notification.error({
           style: {
-            background: "#ffe7a6",
             borderRadius: "10px",
             fontWeight: "bold",
           },

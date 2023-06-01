@@ -8,6 +8,7 @@ import RecoverPassword from "./RecoverPassword/RecoverPassword";
 import { Error403 } from "./Errors/Error403";
 import FormDocuments from "./Home/components/FormDocuments";
 import { AppLayout } from "../layouts";
+import { UsersRoutes } from "./Users/routes";
 
 export const router = createBrowserRouter([
   {
@@ -66,4 +67,5 @@ export const router = createBrowserRouter([
     element: <Error403 />,
     errorElement: <Error />,
   },
+  ...UsersRoutes,
 ]);

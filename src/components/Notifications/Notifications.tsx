@@ -19,11 +19,11 @@ const Notifications = (props: Props) => {
   const { apiURL, params } = props;
 
   const { t } = useTranslation();
-  const { onMarkRead, onMarkAllRead } = useNotifications(apiURL, params);
+  // const { onMarkRead, onMarkAllRead } = useNotifications(apiURL, params);
 
-  const notifications = useSelector(
-    (state: RootState) => state.notifications.colleccion
-  );
+  // const notifications = useSelector(
+  //   (state: RootState) => state.notifications.colleccion
+  // );
 
   const isLoading = useSelector(
     (state: RootState) => state.notifications.isLoading
@@ -39,7 +39,7 @@ const Notifications = (props: Props) => {
       autoplay: true,
       animationData: animationData,
     });
-  }, [notifications]);
+  }, []);
 
   return (
     <div>
@@ -52,7 +52,10 @@ const Notifications = (props: Props) => {
           overflow: "scroll",
         }}
       >
-        {notifications.length === 0 && (
+          <div style={{ height: 300, width: 300 }}>
+            <div ref={containerRef} />
+          </div>
+        {/* {notifications.length === 0 && (
           <div style={{ height: 300, width: 300 }}>
             <div ref={containerRef} />
           </div>
@@ -63,7 +66,7 @@ const Notifications = (props: Props) => {
             notification={notification}
             onMarkRead={onMarkRead}
           />
-        ))}
+        ))} */}
       </div>
       {params?.read !== 1 ? (
         <div
@@ -79,7 +82,7 @@ const Notifications = (props: Props) => {
             className="button-submit"
             block
             size="large"
-            onClick={onMarkAllRead}
+            //onClick={onMarkAllRead}
           >
             {t("notifications.allRead")}
           </Button>
